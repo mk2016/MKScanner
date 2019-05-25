@@ -81,7 +81,8 @@
 		C5BD99A42299659E004E588A = {
 			isa = PBXGroup;
 			children = (
-				C5BD99AF2299659E004E588A /* MKScanner */,
+				C5BD99E322996840004E588A /* MKScanner */,
+				C5BD99AF2299659E004E588A /* MKScannerDemo */,
 				C5BD99C8229965A0004E588A /* MKScannerTests */,
 				C5BD99D3229965A0004E588A /* MKScannerUITests */,
 				C5BD99AE2299659E004E588A /* Products */,
@@ -98,12 +99,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C5BD99AF2299659E004E588A /* MKScanner */ = {
+		C5BD99AF2299659E004E588A /* MKScannerDemo */ = {
 			isa = PBXGroup;
 			children = (
 				C5BD99E2229966AA004E588A /* Origin */,
 			);
-			path = MKScanner;
+			path = MKScannerDemo;
 			sourceTree = "<group>";
 		};
 		C5BD99C8229965A0004E588A /* MKScannerTests */ = {
@@ -138,6 +139,13 @@
 				C5BD99BF2299659F004E588A /* main.m */,
 			);
 			path = Origin;
+			sourceTree = "<group>";
+		};
+		C5BD99E322996840004E588A /* MKScanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MKScanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT92EFC285;
-				INFOPLIST_FILE = MKScanner/Origin/Info.plist;
+				INFOPLIST_FILE = MKScannerDemo/Origin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT92EFC285;
-				INFOPLIST_FILE = MKScanner/Origin/Info.plist;
+				INFOPLIST_FILE = MKScannerDemo/Origin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
