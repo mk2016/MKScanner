@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 /** screen */
 #define MK_SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
@@ -45,3 +45,15 @@ CGSizeEqualToSize(CGSizeMeke(1242, 2208), [[UIScreen mainScreen] currentMode].si
 
 #define MK_ONE_PIXEL_HEIGHT             (1.f/[UIScreen mainScreen].scale)
 #define IPHONEX_HEAD_MARGIN             (MK_IS_IPHONE_XX ? 24 : 0)
+
+/** block */
+#define MK_BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
+typedef void (^MKBlock)(id result);
+typedef void (^MKBoolBlock)(BOOL bRet);
+typedef void (^MKVoidBlock)(void);
+typedef void (^MKIntegerBlock)(NSInteger index);
+typedef void (^MKArrayBlock)(NSArray *array);
+
+#define kMK_FOCAL_SCALE         1.0
+#define kMK_RESOLUTION_WIDTH    1280.0
+#define kMK_RESOLUTION_HEIGHT   720.0

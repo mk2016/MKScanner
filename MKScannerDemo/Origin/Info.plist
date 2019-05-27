@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>APP内包含扫描商品二维码和拍证件照上传等功能。请点击“好”以允许访问。否则您将无法使用相机扫描二维码和拍照。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>APP内包含识别相册中二维码图片、分享相册中图片等功能。请点击“好”以允许访问。否则您将无法浏览相册中图片。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

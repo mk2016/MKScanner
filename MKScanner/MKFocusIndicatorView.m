@@ -26,18 +26,16 @@
 }
 
 - (void)showWithPoint:(CGPoint)point{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self setCenter:point];
-        self.alpha = 0.0;
-        self.hidden = NO;
+    [self setCenter:point];
+    self.alpha = 0.0;
+    self.hidden = NO;
+    [UIView animateWithDuration:0.4 animations:^{
+        self.alpha = 1.0;
+    }completion:^(BOOL finished) {
         [UIView animateWithDuration:0.4 animations:^{
-            self.alpha = 1.0;
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.4 animations:^{
-                self.alpha = 0.f;
-            }];
+            self.alpha = 0.f;
         }];
-    });
+    }];
 }
 
 /*
