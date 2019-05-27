@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		C5BD99B22299659E004E588A /* MKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99B12299659E004E588A /* MKAppDelegate.m */; };
-		C5BD99B52299659E004E588A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99B42299659E004E588A /* ViewController.m */; };
+		C5BD99B52299659E004E588A /* MKHome_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99B42299659E004E588A /* MKHome_VC.m */; };
 		C5BD99B82299659E004E588A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD99B62299659E004E588A /* Main.storyboard */; };
 		C5BD99BA2299659F004E588A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5BD99B92299659F004E588A /* Assets.xcassets */; };
 		C5BD99BD2299659F004E588A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD99BB2299659F004E588A /* LaunchScreen.storyboard */; };
 		C5BD99C02299659F004E588A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99BF2299659F004E588A /* main.m */; };
 		C5BD99CA229965A0004E588A /* MKScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99C9229965A0004E588A /* MKScannerTests.m */; };
 		C5BD99D5229965A0004E588A /* MKScannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99D4229965A0004E588A /* MKScannerUITests.m */; };
+		C5BD99E622996D17004E588A /* MKScan_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99E522996D17004E588A /* MKScan_VC.m */; };
+		C5BD99E9229977F2004E588A /* MKScanNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99E8229977F2004E588A /* MKScanNavigationController.m */; };
+		C5BD99EC229988B9004E588A /* MKFocusIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99EB229988B9004E588A /* MKFocusIndicatorView.m */; };
+		C5BD99EF2299899A004E588A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BD99EE2299899A004E588A /* UIKit.framework */; };
+		C5BD99F12299899E004E588A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BD99F02299899E004E588A /* AVFoundation.framework */; };
+		C5BD99F7229A7B7C004E588A /* MKShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD99F6229A7B7C004E588A /* MKShutterButton.m */; };
+		C5BD99F9229B74CD004E588A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BD99F8229B74CD004E588A /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +45,8 @@
 		C5BD99AD2299659E004E588A /* MKScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD99B02299659E004E588A /* MKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAppDelegate.h; sourceTree = "<group>"; };
 		C5BD99B12299659E004E588A /* MKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKAppDelegate.m; sourceTree = "<group>"; };
-		C5BD99B32299659E004E588A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C5BD99B42299659E004E588A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C5BD99B32299659E004E588A /* MKHome_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKHome_VC.h; sourceTree = "<group>"; };
+		C5BD99B42299659E004E588A /* MKHome_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKHome_VC.m; sourceTree = "<group>"; };
 		C5BD99B72299659E004E588A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5BD99B92299659F004E588A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5BD99BC2299659F004E588A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,18 @@
 		C5BD99D0229965A0004E588A /* MKScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD99D4229965A0004E588A /* MKScannerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScannerUITests.m; sourceTree = "<group>"; };
 		C5BD99D6229965A0004E588A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5BD99E422996D17004E588A /* MKScan_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKScan_VC.h; sourceTree = "<group>"; };
+		C5BD99E522996D17004E588A /* MKScan_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScan_VC.m; sourceTree = "<group>"; };
+		C5BD99E7229977F2004E588A /* MKScanNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKScanNavigationController.h; sourceTree = "<group>"; };
+		C5BD99E8229977F2004E588A /* MKScanNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScanNavigationController.m; sourceTree = "<group>"; };
+		C5BD99EA229988B9004E588A /* MKFocusIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKFocusIndicatorView.h; sourceTree = "<group>"; };
+		C5BD99EB229988B9004E588A /* MKFocusIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKFocusIndicatorView.m; sourceTree = "<group>"; };
+		C5BD99EE2299899A004E588A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C5BD99F02299899E004E588A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C5BD99F2229A7254004E588A /* MKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKConst.h; sourceTree = "<group>"; };
+		C5BD99F5229A7B7C004E588A /* MKShutterButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKShutterButton.h; sourceTree = "<group>"; };
+		C5BD99F6229A7B7C004E588A /* MKShutterButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKShutterButton.m; sourceTree = "<group>"; };
+		C5BD99F8229B74CD004E588A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5BD99F9229B74CD004E588A /* QuartzCore.framework in Frameworks */,
+				C5BD99F12299899E004E588A /* AVFoundation.framework in Frameworks */,
+				C5BD99EF2299899A004E588A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +108,7 @@
 				C5BD99C8229965A0004E588A /* MKScannerTests */,
 				C5BD99D3229965A0004E588A /* MKScannerUITests */,
 				C5BD99AE2299659E004E588A /* Products */,
+				C5BD99ED22998999004E588A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,8 +153,8 @@
 			children = (
 				C5BD99B02299659E004E588A /* MKAppDelegate.h */,
 				C5BD99B12299659E004E588A /* MKAppDelegate.m */,
-				C5BD99B32299659E004E588A /* ViewController.h */,
-				C5BD99B42299659E004E588A /* ViewController.m */,
+				C5BD99B32299659E004E588A /* MKHome_VC.h */,
+				C5BD99B42299659E004E588A /* MKHome_VC.m */,
 				C5BD99B62299659E004E588A /* Main.storyboard */,
 				C5BD99B92299659F004E588A /* Assets.xcassets */,
 				C5BD99BB2299659F004E588A /* LaunchScreen.storyboard */,
@@ -144,8 +167,27 @@
 		C5BD99E322996840004E588A /* MKScanner */ = {
 			isa = PBXGroup;
 			children = (
+				C5BD99E422996D17004E588A /* MKScan_VC.h */,
+				C5BD99E522996D17004E588A /* MKScan_VC.m */,
+				C5BD99E7229977F2004E588A /* MKScanNavigationController.h */,
+				C5BD99E8229977F2004E588A /* MKScanNavigationController.m */,
+				C5BD99EA229988B9004E588A /* MKFocusIndicatorView.h */,
+				C5BD99EB229988B9004E588A /* MKFocusIndicatorView.m */,
+				C5BD99F2229A7254004E588A /* MKConst.h */,
+				C5BD99F5229A7B7C004E588A /* MKShutterButton.h */,
+				C5BD99F6229A7B7C004E588A /* MKShutterButton.m */,
 			);
 			path = MKScanner;
+			sourceTree = "<group>";
+		};
+		C5BD99ED22998999004E588A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD99F02299899E004E588A /* AVFoundation.framework */,
+				C5BD99F8229B74CD004E588A /* QuartzCore.framework */,
+				C5BD99EE2299899A004E588A /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5BD99B52299659E004E588A /* ViewController.m in Sources */,
+				C5BD99B52299659E004E588A /* MKHome_VC.m in Sources */,
 				C5BD99C02299659F004E588A /* main.m in Sources */,
+				C5BD99E9229977F2004E588A /* MKScanNavigationController.m in Sources */,
 				C5BD99B22299659E004E588A /* MKAppDelegate.m in Sources */,
+				C5BD99E622996D17004E588A /* MKScan_VC.m in Sources */,
+				C5BD99EC229988B9004E588A /* MKFocusIndicatorView.m in Sources */,
+				C5BD99F7229A7B7C004E588A /* MKShutterButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

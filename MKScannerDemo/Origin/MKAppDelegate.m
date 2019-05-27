@@ -7,6 +7,7 @@
 //
 
 #import "MKAppDelegate.h"
+#import "MKHome_VC.h"
 
 @interface MKAppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    MKHome_VC *vc = [[MKHome_VC alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = nav;
+    [self.window makeKeyWindow];
+    
     return YES;
 }
 
