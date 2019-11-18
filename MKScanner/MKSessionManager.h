@@ -11,13 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MKSessionManagerDelegate <NSObject, AVCaptureVideoDataOutputSampleBufferDelegate>
+@end
+
 @interface MKSessionManager : NSObject
+@property (nonatomic, weak) id<MKSessionManagerDelegate> delegate;
 
 - (void)start;
 - (void)stop;
 
 - (AVCaptureVideoPreviewLayer *)getVideoPreview;
 - (void)focusWithPoint:(CGPoint)point;
+- (void)setTorch:(BOOL)torch;
 @end
 
 NS_ASSUME_NONNULL_END

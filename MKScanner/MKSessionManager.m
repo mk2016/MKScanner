@@ -92,9 +92,10 @@
 }
 
 #pragma mark - ***** AVCaptureSession delegate ******
-- (void)captureOutput:(AVCaptureOutput *)output didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
+    [self.delegate captureOutput:output didOutputSampleBuffer:sampleBuffer fromConnection:connection];
 }
+
 
 /** focus with touch position */
 - (void)focusWithPoint:(CGPoint)point{
@@ -120,5 +121,15 @@
         }
     }
 }
+
+- (void)setTorch:(BOOL)torch{
+    AVCaptureTorchMode torchMode = torch ? AVCaptureTorchModeOn : AVCaptureTorchModeOff;
+    if ([self.device isTorchModeSupported:torchMode]) {
+        [self.device lockForConfiguration:nil];
+        self.device.torchMode = torchMode;
+        [self.device unlockForConfiguration];
+    }
+}
+
 
 @end

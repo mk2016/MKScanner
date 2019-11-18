@@ -54,6 +54,12 @@ typedef void (^MKVoidBlock)(void);
 typedef void (^MKIntegerBlock)(NSInteger index);
 typedef void (^MKArrayBlock)(NSArray *array);
 
+/** reference */
+#define MK_WEAK_SELF          __weak typeof(self) weakSelf = self;
+#define MK_WEAK_IFY(var)      __weak typeof(var) weak_##var = var;
+#define MK_STRONG_SELF        __strong typeof(weakSelf) strongSelf = weakSelf;
+#define MK_STRONG_IFY(var)    __strong typeof(var) strong_##var = var;
+
 #define kMK_FOCAL_SCALE         1.0
 #define kMK_RESOLUTION_WIDTH    1280.0
 #define kMK_RESOLUTION_HEIGHT   720.0

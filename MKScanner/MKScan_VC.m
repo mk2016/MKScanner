@@ -7,19 +7,20 @@
 //
 
 #import "MKScan_VC.h"
-#import "MKFocusIndicatorView.h"
 #import "MKConst.h"
+#import "MKFocusIndicatorView.h"
 #import "MKShutterButton.h"
+#import "MKOverView.h"
 #import "MKSessionManager.h"
+#import "MKSampleBufferUtils.h"
+#import "MKQuadrilateral.h"
 
-@interface MKScan_VC ()
+@interface MKScan_VC ()<MKSessionManagerDelegate>
 @property (nonatomic, strong) UIView *navigationBarView;
-
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) MKFocusIndicatorView *focusIndicatorView;
 @property (nonatomic, strong) MKShutterButton *shutterButton;
+@property (nonatomic, strong) MKOverView *overView;
 @property (nonatomic, strong) MKSessionManager *sessionManager;
-
 @end
 
 @implementation MKScan_VC
@@ -44,7 +45,11 @@
     self.view.backgroundColor = UIColor.blackColor;
     
     self.sessionManager = [[MKSessionManager alloc] init];
+    self.sessionManager.delegate = self;
     [self.view.layer addSublayer:[self.sessionManager getVideoPreview]];
+    
+    self.overView = [[MKOverView alloc] initWithFrame:CGRectMake(0, 0, MK_SCREEN_WIDTH, MK_SCREEN_HEIGHT)];
+    [self.view addSubview:self.overView];
     
     self.focusIndicatorView = [MKFocusIndicatorView createView];
     [self.view addSubview:self.focusIndicatorView];
@@ -56,11 +61,33 @@
     
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
+#pragma mark - ***** MKSessionManagerDelegate ******
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
+    if (sampleBuffer) {
+        MK_WEAK_SELF
+        [MKSampleBufferUtils biggestRectangleWith:sampleBuffer block:^(MKQuadrilateral * _Nonnull quadrilateral) {
+            if (quadrilateral) {
+                
+                [weakSelf.overView refreshWith:quadrilateral];
+                NSLog(@"-----%@", [quadrilateral description]);
+            }
+        }];
+//        MKQuadrilateral *feature = [MKSampleBufferUtils biggestRectangleWith:sampleBuffer];
+        
+    }
     
-    //    self.navigationBarView.frame = self.view.layer.bounds;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /** 点击拍照 */
 - (void)shutterButtonAction{
@@ -119,23 +146,25 @@
         [btnBack addTarget:self action:@selector(btnBackAction) forControlEvents:UIControlEventTouchUpInside];
         [_navigationBarView addSubview:btnBack];
         
-        UIButton *btnFlash = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnFlash setImage:[UIImage imageNamed:@"scan_img_flash_0"] forState:UIControlStateNormal];
-        [btnFlash setImage:[UIImage imageNamed:@"scan_img_flash_1"] forState:UIControlStateSelected];
-        [btnFlash setImage:[UIImage imageNamed:@"scan_img_flash_1"] forState:UIControlStateHighlighted];
-        btnFlash.frame = CGRectMake(68, MK_SCREEN_IPHONEX_TOP, MK_SCREEN_WIDTH/4, 44);
-        [btnFlash addTarget:self action:@selector(btnFlashAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_navigationBarView addSubview:btnFlash];
+        UIButton *btnTorch = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btnTorch setImage:[UIImage imageNamed:@"scan_img_flash_0"] forState:UIControlStateNormal];
+        [btnTorch setImage:[UIImage imageNamed:@"scan_img_flash_1"] forState:UIControlStateSelected];
+        [btnTorch setImage:[UIImage imageNamed:@"scan_img_flash_1"] forState:UIControlStateHighlighted];
+        btnTorch.frame = CGRectMake(68, MK_SCREEN_IPHONEX_TOP, MK_SCREEN_WIDTH/4, 44);
+        [btnTorch addTarget:self action:@selector(btnTorchAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_navigationBarView addSubview:btnTorch];
         
     }
     return _navigationBarView;
 }
 
-- (void)btnFlashAction:(UIButton *)sender{
+- (void)btnTorchAction:(UIButton *)sender{
     sender.selected = !sender.isSelected;
+    [self.sessionManager setTorch:sender.selected];
 }
 
 - (void)btnBackAction{
+    [self.sessionManager setTorch:NO];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
